@@ -49,9 +49,9 @@ object Form5: TForm5
   end
   object mmo3: TMemo
     Left = 8
-    Top = 39
+    Top = 64
     Width = 190
-    Height = 246
+    Height = 221
     Lines.Strings = (
       'mmo2')
     ScrollBars = ssVertical
@@ -124,6 +124,24 @@ object Form5: TForm5
     Enabled = False
     TabOrder = 8
     OnClick = btn2Click
+  end
+  object btn4: TButton
+    Left = 8
+    Top = 33
+    Width = 106
+    Height = 25
+    Caption = #25163#21160#35299#26512#22352#26631
+    TabOrder = 9
+    OnClick = btn4Click
+  end
+  object btnClear: TButton
+    Left = 120
+    Top = 33
+    Width = 75
+    Height = 25
+    Caption = #28165#38500
+    TabOrder = 10
+    OnClick = btnClearClick
   end
   object Conn1: TFDConnection
     Params.Strings = (

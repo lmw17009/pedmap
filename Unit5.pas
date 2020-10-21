@@ -30,6 +30,8 @@ type
     lbl1: TLabel;
     lbl2: TLabel;
     btn2: TButton;
+    btn4: TButton;
+    btnClear: TButton;
     procedure FormCreate(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure btn3Click(Sender: TObject);
@@ -42,6 +44,7 @@ type
     procedure btn5Click(Sender: TObject);
     procedure btn6Click(Sender: TObject);
     procedure btn7Click(Sender: TObject);
+    procedure btnClearClick(Sender: TObject);
   private
     { Private declarations }
     procedure MouseMove1(Sender: TObject; Shift: TShiftState; X, Y: Integer);
@@ -154,50 +157,99 @@ end;
 
 procedure TForm5.btn4Click(Sender: TObject);
 var
-  dlgopen2: TOpenDialog;
-  Path: string;
-  Txt: TextFile;
-  Str: string;
-  StrList: TStringList;
-  MaxCount: Integer;
-  i: Integer;
+  I: Integer;
+  S, StrTemp: string;
+  J: integer;
+  BlankStBool, BlankEdBool: Boolean;
+  StIndex, EdIndex: Integer;
+//var
+//  dlgopen2: TOpenDialog;
+//  Path: string;
+//  Txt: TextFile;
+//  Str: string;
+//  StrList: TStringList;
+//  MaxCount: Integer;
+//  i: Integer;
 begin
-
-  dlgopen2 := TOpenDialog.Create(nil);
-  try
-    dlgopen2.Filter := '坐标文件(*.txt)|*.txt';
-    dlgopen2.DefaultExt := '*.txt';
-    if dlgopen2.Execute then
+  if MessageDlg('请确认已经放入xy坐标数据列', TMsgDlgType.mtWarning, [mbYes, mbNo], 0) = mrYes then
+  begin
+    with mmo3 do
     begin
-      SetLength(TestPosX, 0);
-      Path := Trim(dlgopen2.FileName);
-      StrList := TStringList.Create;
-      AssignFile(Txt, Path);
-      Reset(Txt);
-      while not Eof(Txt) do
+      BlankStBool := False;
+      BlankEdBool := False;
+      StrTemp := '';
+      for I := 0 to (Lines.Count - 1) do
       begin
-        Readln(Txt, Str);
-        StrList.Add(Str);
-      end;
-      MaxCount := StrList.Count;
-      mmo3.Lines.Add('x数目= ' + IntToStr(MaxCount));
-      //SetLength(PosTemp, MaxCount);
-      SetLength(TestPosX, MaxCount);
-      for i := 0 to MaxCount - 1 do
-      begin
-        if StrList[i] = '' then
-          Continue;
-        TestPosX[i] := StrToInt(StrList[i]);
-      end;
-      CloseFile(Txt);
-      mmo3.Lines.Add('x最大数= ' + IntToStr(GetMaxInArray(TestPosX)));
-      XInputOk := True;
+        S := Lines[I];
+        S := Trim(S);
+        StIndex := 0;
+        EdIndex := 0;
+        for J := 0 to Length(S) - 1 do
+        begin
+          if not BlankStBool then
+          begin
+            if S[J] = ' ' then
+            begin
+              BlankStBool := True;
+              StIndex := J;
+            end;
+          end;
+          if BlankStBool then
+          begin
+            if S[J] <> ' ' then
+            begin
+              BlankEdBool := True;
+              EdIndex := J;
+              //StrTemp := StrTemp + S[J];
+            end;
+          end;
+          if (not BlankStBool) or (BlankEdBool) then
+          begin
+            StrTemp := StrTemp + S[J];
+          end;
 
+        end;
+        Lines[i]:=StrTemp;
+
+      end;
     end;
-  finally
-    FreeAndNil(dlgopen2);
 
   end;
+//  dlgopen2 := TOpenDialog.Create(nil);
+//  try
+//    dlgopen2.Filter := '坐标文件(*.txt)|*.txt';
+//    dlgopen2.DefaultExt := '*.txt';
+//    if dlgopen2.Execute then
+//    begin
+//      SetLength(TestPosX, 0);
+//      Path := Trim(dlgopen2.FileName);
+//      StrList := TStringList.Create;
+//      AssignFile(Txt, Path);
+//      Reset(Txt);
+//      while not Eof(Txt) do
+//      begin
+//        Readln(Txt, Str);
+//        StrList.Add(Str);
+//      end;
+//      MaxCount := StrList.Count;
+//      mmo3.Lines.Add('x数目= ' + IntToStr(MaxCount));
+//      //SetLength(PosTemp, MaxCount);
+//      SetLength(TestPosX, MaxCount);
+//      for i := 0 to MaxCount - 1 do
+//      begin
+//        if StrList[i] = '' then
+//          Continue;
+//        TestPosX[i] := StrToInt(StrList[i]);
+//      end;
+//      CloseFile(Txt);
+//      mmo3.Lines.Add('x最大数= ' + IntToStr(GetMaxInArray(TestPosX)));
+//      XInputOk := True;
+//
+//    end;
+//  finally
+//    FreeAndNil(dlgopen2);
+//
+//  end;
 
 end;
 
@@ -300,6 +352,11 @@ begin
     FreeAndNil(dlg);
   end;
 
+end;
+
+procedure TForm5.btnClearClick(Sender: TObject);
+begin
+  mmo3.Lines.Clear;
 end;
 
 function TForm5.DrawFunMain(Scale: Integer; Mode: Integer): Boolean;
