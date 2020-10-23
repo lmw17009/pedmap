@@ -4,7 +4,7 @@ object Form11: TForm11
   BorderIcons = [biSystemMenu]
   Caption = 'WATFTP'
   ClientHeight = 385
-  ClientWidth = 784
+  ClientWidth = 864
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -42,9 +42,9 @@ object Form11: TForm11
     OnClick = btnSearchFileClick
   end
   object mmo1: TMemo
-    Left = 128
+    Left = 112
     Top = 96
-    Width = 652
+    Width = 744
     Height = 265
     Lines.Strings = (
       'mmo1')
@@ -77,7 +77,7 @@ object Form11: TForm11
   object stat1: TStatusBar
     Left = 0
     Top = 366
-    Width = 784
+    Width = 864
     Height = 19
     Panels = <
       item
@@ -86,6 +86,7 @@ object Form11: TForm11
       item
         Width = 200
       end>
+    ExplicitWidth = 784
   end
   object btnSearchSub: TButton
     Left = 297
@@ -126,9 +127,9 @@ object Form11: TForm11
     TabOrder = 9
   end
   object lv1: TListView
-    Left = 8
+    Left = 0
     Top = 96
-    Width = 114
+    Width = 113
     Height = 264
     Columns = <
       item

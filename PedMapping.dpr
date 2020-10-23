@@ -16,7 +16,8 @@ uses
   FTP in 'FTP.pas' {Form11},
   JsonAdjust in '..\..\CoreFunction\JsonAdjust.pas',
   WatLimit in 'WatLimit.pas' {WatLimitMain},
-  WatLimitEdit in 'WatLimitEdit.pas' {WatEdit};
+  WatLimitEdit in 'WatLimitEdit.pas' {WatEdit},
+  XlsReName in 'XlsReName.pas' {Form12};
 
 {$R *.res}
 
@@ -35,5 +36,6 @@ begin
   Application.CreateForm(TForm11, Form11);
   Application.CreateForm(TWatLimitMain, WatLimitMain);
   Application.CreateForm(TWatEdit, WatEdit);
+  Application.CreateForm(TForm12, Form12);
   Application.Run;
 end.

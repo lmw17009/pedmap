@@ -42,7 +42,8 @@ type
     function FtpConnect: Boolean;
     function ProdList(FtpFileList: TStrings; out List: TStrings): Boolean;
     function TestPlan(ListName: string; out List: TStrings): Boolean;
-    procedure MmAdd(MSG: string);
+    procedure MmAdd(MSG: string); overload;
+    procedure MmAdd(MSG: TStrings); overload;
     procedure RefreshDownPath;
   end;
 
@@ -61,7 +62,7 @@ var
   Txt: TextFile;
   S: string;
   I, J: Integer;
-  Count: Integer;
+  ListCount: Integer;
   Arr: TArray<string>;
   ProdLimitBool, ProdTstBool, ProdWafBool, ProdDieBool: Boolean;
   EngLimitBool, EngTstBool, EngWafBool, EngDieBool: Boolean;
@@ -72,7 +73,7 @@ begin
     MmAdd('PROD开始检测....');
     if {Pos('*', edtPPID.Text) = 0} True then
     begin
-      Count := 0;
+      ListCount := 0;
       for I := 0 to WatTestPlanProd.Count - 1 do
       begin
 
@@ -81,12 +82,12 @@ begin
         begin
           MmAdd(IntToStr(I + 4) + '=>' + WatTestPlanProd[I]);
           MmAdd('发现相同testplan,开始查询....');
-          AssignFile(Txt, PilProdFileName);
+          AssignFile(Txt, WatFilePath + PilProdFileName);
           Reset(Txt);
           while not Eof(Txt) do
           begin
             Readln(Txt, S);
-            if Count - 3 = I then
+            if ListCount - 3 = I then
             begin
               MmAdd(S);
               //Arr := S.Split([' ']);
@@ -168,7 +169,7 @@ begin
             end
             else
             begin
-              Inc(Count);
+              Inc(ListCount);
             end;
           end;
 
@@ -178,13 +179,12 @@ begin
     end;
     MmAdd('PROD查询完毕....');
   end;
-
   if WatTestPlanEng <> nil then
   begin
     MmAdd('ENG开始检测....');
     if {Pos('*', edtPPID.Text) = 0} True then
     begin
-      Count := 0;
+      ListCount := 0;
       for I := 0 to WatTestPlanEng.Count - 1 do
       begin
         //Mmadd('开始对比testplan....');
@@ -192,12 +192,16 @@ begin
         begin
           MmAdd(IntToStr(I + 4) + '=>' + WatTestPlanEng[I]);
           MmAdd('发现相同testplan,开始查询....');
-          AssignFile(Txt, PilEngFileName);
+          AssignFile(Txt, WatFilePath + PilEngFileName);
           Reset(Txt);
           while not Eof(Txt) do
           begin
             Readln(Txt, S);
-            if Count - 3 = I then
+//            if ListCount >= 3 then
+//            begin
+//              MmAdd(IntToStr(ListCount) + '/' + WatTestPlanEng[ListCount - 3] + '/' + IntToStr(I));
+//            end;
+            if ListCount - 3 = I then
             begin
               MmAdd(S);
               //eng check
@@ -273,7 +277,7 @@ begin
             end
             else
             begin
-              Inc(Count);
+              Inc(ListCount);
             end;
           end;
 
@@ -599,6 +603,7 @@ begin
     idftp2.Get(FtpPathEtc + '/' + PilEngFileName, WatFilePath + PilEngFileName, True, False);
     MmAdd('PIL_ENG文件获取成功...');
     //处理pil_Prod文件
+
     TestPlan(PilProdFileName, WatTestPlanProd);
     TestPlan(PilEngFileName, WatTestPlanEng);
     Self.Caption := 'WATFTP';
@@ -785,9 +790,13 @@ function TForm11.TestPlan(ListName: string; out List: TStrings): Boolean;
 var
   Txt: TextFile;
   S, S1: string;
+  Count: Integer;
 begin
 //WatTestPlan
   Result := False;
+  List.Clear;
+  Count := 0;
+  MmAdd('PIL读取...' + ListName);
   if FileExists(WatFilePath + ListName) then
   begin
     AssignFile(Txt, WatFilePath + ListName);
@@ -803,12 +812,12 @@ begin
       begin
         List.Add(S1);
       end;
+      Inc(Count);
     end;
     CloseFile(Txt);
     if List.Count > 0 then
     begin
       Result := True;
-      //MmaddStrings(List);
     end;
 
   end;
@@ -826,6 +835,11 @@ begin
   FreeAndNil(EngWaf);
   FreeAndNil(WatTestPlanProd);
   FreeAndNil(WatTestPlanEng);
+end;
+
+procedure TForm11.MmAdd(MSG: TStrings);
+begin
+  mmo1.Lines.AddStrings(MSG);
 end;
 
 procedure TForm11.MmAdd(Msg: string);

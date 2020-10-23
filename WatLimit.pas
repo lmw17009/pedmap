@@ -39,10 +39,6 @@ type
     { Public declarations }
     procedure RefreshListView;
   end;
-
-const
-  Version = '2020-09-18';
-
 var
   WatLimitMain: TWatLimitMain;
   PosX, PosY: Integer;

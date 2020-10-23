@@ -299,6 +299,11 @@ object Form1: TForm1
         Caption = 'CP-SPEC'#25209#37327#25991#20214#26356#25913
         OnClick = CPSPEC1Click
       end
+      object XLS1: TMenuItem
+        Caption = 'XLS'#25991#20214#25913#21517
+        Enabled = False
+        OnClick = XLS1Click
+      end
     end
     object WAT1: TMenuItem
       Caption = 'WAT'

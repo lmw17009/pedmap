@@ -6,7 +6,7 @@ uses
   System.Classes;
 
 const
-  Version = ' V20201020';
+  Version = ' V20201023';
   XYPosOffsetToLastValue = 91;
   TelIndexPos = 14;
   TELXYPosStart = 61;

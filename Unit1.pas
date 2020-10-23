@@ -53,6 +53,7 @@ type
     WAT1: TMenuItem;
     FTP1: TMenuItem;
     WatLimit1: TMenuItem;
+    XLS1: TMenuItem;
     procedure E1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure NBBtnClick(Sender: TObject);
@@ -89,6 +90,7 @@ type
     procedure CPSPEC1Click(Sender: TObject);
     procedure FTP1Click(Sender: TObject);
     procedure WatLimit1Click(Sender: TObject);
+    procedure XLS1Click(Sender: TObject);
   private
 
     { Private declarations }
@@ -127,7 +129,7 @@ implementation
 {$R *.dfm}
 
 uses
-  Global, Unit2, Unit3, Unit5, Unit6, Unit7, Unit8, WAT, Limit, FTP,WatLimit;
+  Global, Unit2, Unit3, Unit5, Unit6, Unit7, Unit8, WAT, Limit, FTP,WatLimit,XlsReName;
 
 procedure TForm1.A1Click(Sender: TObject);
 begin
@@ -1638,6 +1640,14 @@ begin
   except
     ShowMessage('系统内存不足。');
   end;
+end;
+
+procedure TForm1.XLS1Click(Sender: TObject);
+begin
+   if not Form12.Showing then
+   begin
+     Form12.Show;
+   end;
 end;
 
 procedure TForm1.XXLBtnClick(Sender: TObject);
