@@ -10,6 +10,7 @@ object Form10: TForm10
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  Menu = mm1
   OldCreateOrder = False
   OnCreate = FormCreate
   PixelsPerInch = 96
@@ -50,6 +51,15 @@ object Form10: TForm10
     Height = 21
     TabOrder = 3
   end
+  object mmo3: TMemo
+    Left = 8
+    Top = 272
+    Width = 185
+    Height = 89
+    Lines.Strings = (
+      'mmo3')
+    TabOrder = 4
+  end
   object dlgOpen1: TOpenDialog
     Left = 152
     Top = 40
@@ -70,5 +80,13 @@ object Form10: TForm10
   object fdphysdbcdrvrlnk1: TFDPhysODBCDriverLink
     Left = 464
     Top = 136
+  end
+  object mm1: TMainMenu
+    Left = 296
+    Top = 224
+    object N1: TMenuItem
+      Caption = #35774#32622
+      OnClick = N1Click
+    end
   end
 end

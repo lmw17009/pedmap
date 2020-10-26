@@ -3,14 +3,13 @@ unit Limit;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
-  System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
-  Vcl.StdCtrls, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error,
-  FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool,
-  FireDAC.Stan.Async, FireDAC.Phys, FireDAC.VCLUI.Wait, FireDAC.Stan.Param,
-  FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Phys.ODBCDef,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.ERROR, FireDAC.UI.Intf, FireDAC.Phys.Intf,
+  FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.VCLUI.Wait,
+  FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Phys.ODBCDef,
   FireDAC.Phys.ODBCBase, FireDAC.Phys.ODBC, Data.DB, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client;
+  FireDAC.Comp.Client, Vcl.Menus, Winapi.ShellAPI;
 
 type
   TForm10 = class(TForm)
@@ -22,13 +21,17 @@ type
     Qry1: TFDQuery;
     fdphysdbcdrvrlnk1: TFDPhysODBCDriverLink;
     edtPPIDName: TEdit;
+    mm1: TMainMenu;
+    N1: TMenuItem;
+    mmo3: TMemo;
     procedure FormCreate(Sender: TObject);
     procedure btn1Click(Sender: TObject);
+    procedure N1Click(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
-
+    procedure DropFiles(var MSG: TMessage); message WM_DROPFILES;
   end;
 
 var
@@ -36,6 +39,8 @@ var
 
 implementation
 
+uses
+  XlsSetup;
 {$R *.dfm}
 
 procedure TForm10.btn1Click(Sender: TObject);
@@ -166,7 +171,7 @@ begin
             begin
               if TypeList[N] = 'A' then
               begin
-                MyCon.Params.Add('DataBase=D:\Lidashi\dephixeproject\tskmap\tskmap\Win32\Debug\Limit\1.XLS');// + FileList[N]);
+                MyCon.Params.Add('DataBase=D:\Lidashi\dephixeproject\tskmap\tskmap\Win32\Debug\Limit\1.XLS'); // + FileList[N]);
                 MyQry.Connection := MyCon;
                 MyCon.Connected := True;
 
@@ -212,10 +217,39 @@ begin
 
 end;
 
+procedure TForm10.DropFiles(var Msg: TMessage);
+var
+  buffer: array[0..1024] of Char;
+  FileCount: Integer;
+  I: Integer;
+begin
+  inherited;
+  FileCount := DragQueryFile(Msg.WParam, $FFFFFFFF, nil, 0);
+  for I := 0 to FileCount - 1 do
+  begin
+    buffer[0] := #0;
+    DragQueryFile(Msg.WParam, I, buffer, SizeOf(buffer)); //第一个文件
+    ShowMessage('当前文件路径为：' + buffer);
+  end;
+
+end;
+
 procedure TForm10.FormCreate(Sender: TObject);
 begin
   mmo1.Lines.Clear;
   mmo2.Lines.Clear;
+  ChangeWindowMessageFilter(WM_DROPFILES, MSGFLT_ADD);
+  ChangeWindowMessageFilter(WM_COPYDATA, MSGFLT_ADD);
+  ChangeWindowMessageFilter(WM_COPYGLOBALDATA, MSGFLT_ADD);
+  DragAcceptFiles(Handle, True); //第二个参数为False时，不启用文件拖放
+end;
+
+procedure TForm10.N1Click(Sender: TObject);
+begin
+  if not Form13.Showing then
+  begin
+    Form13.Show;
+  end;
 end;
 
 end.

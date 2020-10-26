@@ -14,10 +14,11 @@ uses
   WAT in 'WAT.pas' {Form9},
   Limit in 'Limit.pas' {Form10},
   FTP in 'FTP.pas' {Form11},
-  JsonAdjust in '..\..\CoreFunction\JsonAdjust.pas',
   WatLimit in 'WatLimit.pas' {WatLimitMain},
   WatLimitEdit in 'WatLimitEdit.pas' {WatEdit},
-  XlsReName in 'XlsReName.pas' {Form12};
+  XlsReName in 'XlsReName.pas' {Form12},
+  XlsSetup in 'XlsSetup.pas' {Form13},
+  JsonAdjust in 'JsonAdjust.pas';
 
 {$R *.res}
 
@@ -37,5 +38,6 @@ begin
   Application.CreateForm(TWatLimitMain, WatLimitMain);
   Application.CreateForm(TWatEdit, WatEdit);
   Application.CreateForm(TForm12, Form12);
+  Application.CreateForm(TForm13, Form13);
   Application.Run;
 end.

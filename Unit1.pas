@@ -3,10 +3,9 @@ unit Unit1;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
-  System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus,
-  Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.ButtonGroup, Vcl.Buttons, Vcl.Imaging.pngimage,
-  System.Math;
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ExtCtrls,
+  Vcl.StdCtrls, Vcl.ButtonGroup, Vcl.Buttons, Vcl.Imaging.pngimage, System.Math;
 
 type
   TForm1 = class(TForm)
@@ -110,6 +109,7 @@ type
     // procedure My2MouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     function MaxMinFun(var N1, N2, Condition: Integer): Integer;
     procedure MMadd(MSG: string);
+    procedure ConfigIni;
   end;
 
 function LoadTelMkFile(var Path: string): Boolean;
@@ -129,7 +129,8 @@ implementation
 {$R *.dfm}
 
 uses
-  Global, Unit2, Unit3, Unit5, Unit6, Unit7, Unit8, WAT, Limit, FTP,WatLimit,XlsReName;
+  Global, Unit2, Unit3, Unit5, Unit6, Unit7, Unit8, WAT, Limit, FTP, WatLimit,
+  XlsReName;
 
 procedure TForm1.A1Click(Sender: TObject);
 begin
@@ -585,7 +586,7 @@ begin
   Memo1.Clear;
   MMadd('点击帮助按钮可参考使用说明，部分按钮已经移入操作菜单。');
   MMadd('请点击打开按钮开始操作。');
-
+  ConfigIni;
 
   // ShowMessage('1,目前有NB、S、M、L、XL、XXL 六种图显操作。' + #13#10 + '2,M=Mark,S=Skip,N=Normal。' + #13#10 + '3,MarkAll=Mark所有,NormalAll=Normal所有,SkipAll=Skip所有。' + #13#10 + '4,保存文件会以.bak后缀备份文件。' + #13#10 + '5,读取TEL数据可使用TEL的BIN数据一键修改。');
 end;
@@ -1644,10 +1645,10 @@ end;
 
 procedure TForm1.XLS1Click(Sender: TObject);
 begin
-   if not Form12.Showing then
-   begin
-     Form12.Show;
-   end;
+  if not Form12.Showing then
+  begin
+    Form12.Show;
+  end;
 end;
 
 procedure TForm1.XXLBtnClick(Sender: TObject);
@@ -1678,6 +1679,14 @@ end;
 procedure TForm1.ButtonGroup1Items2Click(Sender: TObject);
 begin
   Edit3.Text := Trim(ButtonGroup1.Items[2].Caption);
+end;
+
+procedure TForm1.ConfigIni;
+begin
+  if not DirectoryExists(ExtractFilePath(ParamStr(0))+'\Config') then
+  begin
+    CreateDir(ExtractFilePath(ParamStr(0))+'\Config');
+  end;
 end;
 
 procedure TForm1.CPSPEC1Click(Sender: TObject);
