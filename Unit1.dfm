@@ -316,11 +316,22 @@ object Form1: TForm1
         OnClick = WatLimit1Click
       end
     end
+    object N6: TMenuItem
+      Caption = #21246#36873#21442#25968
+      object mniTSKSample: TMenuItem
+        Caption = 'TSKSimple'
+        OnClick = mniTSKSampleClick
+      end
+    end
     object N3: TMenuItem
       Caption = #24110#21161
       object A1: TMenuItem
         Caption = #20851#20110'(&A)'
         OnClick = A1Click
+      end
+      object mniN7: TMenuItem
+        Caption = #24110#21161#35828#26126
+        OnClick = mniN7Click
       end
     end
   end

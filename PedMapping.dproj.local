@@ -1,43 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899/12/30 00:00:00.000.171,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit11.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.939,D:\Lidashi\dephixeproject\tskmap\tskmap\Unit11.pas=D:\Lidashi\dephixeproject\tskmap\tskmap\FTP.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.906,=C:\Users\PQ03947\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.706,D:\Lidashi\dephixeproject\tskmap\tskmap\Unit12.dfm=D:\Lidashi\dephixeproject\tskmap\tskmap\XlsReName.dfm</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.190,=D:\Lidashi\dephixeproject\tskmap\Unit2.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.555,D:\Lidashi\dephixeproject\tskmap\Unit1.dfm=C:\Users\PQ03947\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.275,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit7.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.008,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit6.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.848,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit3.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.877,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit4.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.866,D:\Lidashi\dephixeproject\tskmap\tskmap\Unit4.pas=</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.986,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit4.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.821,D:\Lidashi\dephixeproject\tskmap\tskmap\Limit.dfm=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit10.dfm</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.854,=D:\Lidashi\dephixeproject\tskmap\tskmap\WatLimit.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.983,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit5.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.101,D:\Lidashi\dephixeproject\tskmap\tskmap\WAT.dfm=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit9.dfm</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.101,D:\Lidashi\dephixeproject\tskmap\tskmap\WAT.pas=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit9.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.798,D:\Lidashi\dephixeproject\tskmap\tskmap\PedMapping.dproj=D:\Lidashi\dephixeproject\tskmap\tskmap\PedMapping.dproj</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.555,D:\Lidashi\dephixeproject\tskmap\Unit1.pas=C:\Users\PQ03947\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.706,D:\Lidashi\dephixeproject\tskmap\tskmap\Unit12.pas=D:\Lidashi\dephixeproject\tskmap\tskmap\XlsReName.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.933,=D:\Lidashi\dephixeproject\tskmap\tskmap\WatLimitEdit.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.219,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit12.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.606,=D:\Lidashi\dephixeproject\CoreFunction\JsonAdjust.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.019,D:\Lidashi\dephixeproject\tskmap\Global.pas=D:\Lidashi\dephixeproject\tskmap\Unit2.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.368,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit9.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.895,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit2.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.335,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit2.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.978,D:\Lidashi\dephixeproject\tskmap\PedMapping.dproj=C:\Users\PQ03947\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.821,D:\Lidashi\dephixeproject\tskmap\tskmap\Limit.pas=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit10.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.939,D:\Lidashi\dephixeproject\tskmap\tskmap\Unit11.dfm=D:\Lidashi\dephixeproject\tskmap\tskmap\FTP.dfm</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.137,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit8.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.601,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit10.pas</Transaction>
-    <Transaction>1899/12/30 00:00:00.000.011,D:\Lidashi\dephixeproject\tskmap\tskmap\Update.pas=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit4.pas</Transaction>
-    <Transaction>2020/10/26 21:18:45.000.736,=C:\Users\Administrator\MyGitFolder\pedmap\Unit13.pas</Transaction>
-    <Transaction>2020/10/26 21:19:01.000.319,C:\Users\Administrator\MyGitFolder\pedmap\XlsSetup.pas=C:\Users\Administrator\MyGitFolder\pedmap\Unit13.pas</Transaction>
-    <Transaction>2020/10/26 21:19:01.000.319,C:\Users\Administrator\MyGitFolder\pedmap\XlsSetup.dfm=C:\Users\Administrator\MyGitFolder\pedmap\Unit13.dfm</Transaction>
-    <Transaction>2020/10/26 22:14:00.014,=C:\Users\Administrator\MyGitFolder\pedmap\JsonAdjust.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.906,=C:\Users\PQ03947\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.555,C:\Users\PQ03947\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\Lidashi\dephixeproject\tskmap\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.706,D:\Lidashi\dephixeproject\tskmap\tskmap\XlsReName.pas=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit12.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.101,D:\Lidashi\dephixeproject\tskmap\tskmap\Unit9.dfm=D:\Lidashi\dephixeproject\tskmap\tskmap\WAT.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.019,D:\Lidashi\dephixeproject\tskmap\Unit2.pas=D:\Lidashi\dephixeproject\tskmap\Global.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.171,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit11.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.275,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit7.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.008,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit6.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.854,=D:\Lidashi\dephixeproject\tskmap\tskmap\WatLimit.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.877,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit4.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.866,D:\Lidashi\dephixeproject\tskmap\tskmap\Unit4.pas=</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.986,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit4.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.011,D:\Lidashi\dephixeproject\tskmap\tskmap\Unit4.pas=D:\Lidashi\dephixeproject\tskmap\tskmap\Update.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.706,D:\Lidashi\dephixeproject\tskmap\tskmap\XlsReName.dfm=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit12.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.848,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit3.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.983,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit5.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.939,D:\Lidashi\dephixeproject\tskmap\tskmap\FTP.dfm=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit11.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.939,D:\Lidashi\dephixeproject\tskmap\tskmap\FTP.pas=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit11.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.798,D:\Lidashi\dephixeproject\tskmap\tskmap\PedMapping.dproj=D:\Lidashi\dephixeproject\tskmap\tskmap\PedMapping.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.821,D:\Lidashi\dephixeproject\tskmap\tskmap\Unit10.dfm=D:\Lidashi\dephixeproject\tskmap\tskmap\Limit.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.137,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit8.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.368,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit9.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.933,=D:\Lidashi\dephixeproject\tskmap\tskmap\WatLimitEdit.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.219,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit12.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.606,=D:\Lidashi\dephixeproject\CoreFunction\JsonAdjust.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.101,D:\Lidashi\dephixeproject\tskmap\tskmap\Unit9.pas=D:\Lidashi\dephixeproject\tskmap\tskmap\WAT.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.190,=D:\Lidashi\dephixeproject\tskmap\Unit2.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.555,C:\Users\PQ03947\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\Lidashi\dephixeproject\tskmap\Unit1.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.978,C:\Users\PQ03947\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Lidashi\dephixeproject\tskmap\PedMapping.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.601,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit10.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.895,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit2.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.335,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit2.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.821,D:\Lidashi\dephixeproject\tskmap\tskmap\Unit10.pas=D:\Lidashi\dephixeproject\tskmap\tskmap\Limit.pas</Transaction>
+    <Transaction>2020-10-26 21:18:45.000.736,=C:\Users\Administrator\MyGitFolder\pedmap\Unit13.pas</Transaction>
+    <Transaction>2020-10-26 21:19:01.000.319,C:\Users\Administrator\MyGitFolder\pedmap\Unit13.pas=C:\Users\Administrator\MyGitFolder\pedmap\XlsSetup.pas</Transaction>
+    <Transaction>2020-10-26 21:19:01.000.319,C:\Users\Administrator\MyGitFolder\pedmap\Unit13.dfm=C:\Users\Administrator\MyGitFolder\pedmap\XlsSetup.dfm</Transaction>
+    <Transaction>2020-10-26 22:14:00.000.014,=C:\Users\Administrator\MyGitFolder\pedmap\JsonAdjust.pas</Transaction>
+    <Transaction>2020-11-03 12:57:07.134,=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit14.pas</Transaction>
+    <Transaction>2020-11-03 12:57:17.327,D:\Lidashi\dephixeproject\tskmap\tskmap\Help.dfm=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit14.dfm</Transaction>
+    <Transaction>2020-11-03 12:57:17.327,D:\Lidashi\dephixeproject\tskmap\tskmap\Help.pas=D:\Lidashi\dephixeproject\tskmap\tskmap\Unit14.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="Global.pas"/>
@@ -71,5 +74,7 @@
     <File Path="XlsSetup.pas"/>
     <File Path="XlsSetup.dfm"/>
     <File Path="JsonAdjust.pas"/>
+    <File Path="Help.pas"/>
+    <File Path="Help.dfm"/>
   </ProjectSortOrder>
 </BorlandProject>

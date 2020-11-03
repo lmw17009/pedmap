@@ -53,9 +53,9 @@ object Form10: TForm10
   end
   object mmo3: TMemo
     Left = 8
-    Top = 272
-    Width = 185
-    Height = 89
+    Top = 240
+    Width = 89
+    Height = 81
     Lines.Strings = (
       'mmo3')
     TabOrder = 4

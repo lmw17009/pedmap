@@ -3,9 +3,10 @@ unit Unit1;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
-  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ExtCtrls,
-  Vcl.StdCtrls, Vcl.ButtonGroup, Vcl.Buttons, Vcl.Imaging.pngimage, System.Math;
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus,
+  Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.ButtonGroup, Vcl.Buttons, Vcl.Imaging.pngimage,
+  System.Math;
 
 type
   TForm1 = class(TForm)
@@ -53,6 +54,9 @@ type
     FTP1: TMenuItem;
     WatLimit1: TMenuItem;
     XLS1: TMenuItem;
+    N6: TMenuItem;
+    mniTSKSample: TMenuItem;
+    mniN7: TMenuItem;
     procedure E1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure NBBtnClick(Sender: TObject);
@@ -90,7 +94,10 @@ type
     procedure FTP1Click(Sender: TObject);
     procedure WatLimit1Click(Sender: TObject);
     procedure XLS1Click(Sender: TObject);
+    procedure mniTSKSampleClick(Sender: TObject);
+    procedure mniN7Click(Sender: TObject);
   private
+    procedure SaveTSKMapFile;
 
     { Private declarations }
 
@@ -130,7 +137,7 @@ implementation
 
 uses
   Global, Unit2, Unit3, Unit5, Unit6, Unit7, Unit8, WAT, Limit, FTP, WatLimit,
-  XlsReName;
+  XlsReName, Help;
 
 procedure TForm1.A1Click(Sender: TObject);
 begin
@@ -1479,11 +1486,10 @@ end;
 
 procedure TForm1.N5Click(Sender: TObject);
 var
-  MyStream: TFileStream;
-  I: Integer;
   LBuffer: TBytes;
   Buf: Byte;
   BackPath: string;
+  FileNameTemp: PChar;
 begin
   if Pathstr <> '' then
   begin
@@ -1492,23 +1498,20 @@ begin
     begin
       CreateDir(BackPath);
     end;
-
-    CopyFile(PChar(Pathstr), PChar(BackPath + TskFileName + '-' + FormatDateTime('yyyymmddhhnnss', Now)), True);
-    MMadd('文件备份成功。');
-    MMadd('路径: ' + #13#10 + ExtractFileDir(ParamStr(0)) + '\Back\');
-    MyStream := TFileStream.Create(Pathstr, fmOpenWrite or fmShareExclusive);
-    with MyStream do
+    FileNameTemp := PChar(BackPath + TskFileName + '-' + FormatDateTime('yyyymmddhhnnss', Now));
+    if CopyFile(PChar(Pathstr), FileNameTemp, True) then
     begin
-      Position := 2;
-      for I := 0 to High(BinArr) do
+      MMadd('文件备份成功。');
+      MMadd('路径: ' + #13#10 + ExtractFileDir(ParamStr(0)) + '\Back\' + FileNameTemp);
+      SaveTSKMapFile;
+    end
+    else
+    begin
+      if MessageDlg('文件未备份成功，请确认是否继续？', TMsgDlgType.mtWarning, [mbYes, mbNo], 0) = mrYes then
       begin
-        Buf := BinArr[I];
-        Write(Buf, 1);
-        Seek(3, soFromCurrent);
+        SaveTSKMapFile;
       end;
     end;
-    MyStream.Free;
-    MMadd('文件保存成功。');
 
   end;
 end;
@@ -1628,6 +1631,19 @@ begin
 
 end;
 
+procedure TForm1.mniN7Click(Sender: TObject);
+begin
+  if not Form14.Showing then
+  begin
+    Form14.Show;
+  end;
+end;
+
+procedure TForm1.mniTSKSampleClick(Sender: TObject);
+begin
+  mniTSKSample.Checked := not mniTSKSample.Checked;
+end;
+
 procedure TForm1.XLBtnClick(Sender: TObject);
 begin
   try
@@ -1683,10 +1699,51 @@ end;
 
 procedure TForm1.ConfigIni;
 begin
-  if not DirectoryExists(ExtractFilePath(ParamStr(0))+'\Config') then
+  if not DirectoryExists(ExtractFilePath(ParamStr(0)) + '\Config') then
   begin
-    CreateDir(ExtractFilePath(ParamStr(0))+'\Config');
+    CreateDir(ExtractFilePath(ParamStr(0)) + '\Config');
   end;
+end;
+
+procedure TForm1.SaveTSKMapFile;
+var
+  MyStream: TFileStream;
+  Buf80: Byte;
+  I: Integer;
+begin
+  MyStream := TFileStream.Create(Pathstr, fmOpenWrite or fmShareExclusive);
+  with MyStream do
+  begin
+    Position := 2;
+    if mniTSKSample.Checked then
+    begin
+      MMadd('Test已转换为Simple标记，如不需要请取消TSKSample勾选。');
+      Buf80 := Byte(80);
+      for I := 0 to High(BinArr) do
+      begin
+        if BinArr[I] = Bin_64 then
+        begin
+          Write(Buf80, 1);
+        end
+        else
+        begin
+          Write(BinArr[I], 1);
+        end;
+        Seek(3, soFromCurrent);
+      end;
+    end
+    else
+    begin
+      for I := 0 to High(BinArr) do
+      begin
+        //Buf := BinArr[I];
+        Write(BinArr[I], 1);
+        Seek(3, soFromCurrent);
+      end;
+    end;
+  end;
+  MyStream.Free;
+  MMadd('文件修改成功。');
 end;
 
 procedure TForm1.CPSPEC1Click(Sender: TObject);

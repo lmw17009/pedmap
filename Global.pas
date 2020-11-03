@@ -6,7 +6,7 @@ uses
   System.Classes;
 
 const
-  Version = ' V20201023';
+  Version = ' V20201103';//°æ±¾ºÅ£¬
   XYPosOffsetToLastValue = 91;
   TelIndexPos = 14;
   TELXYPosStart = 61;
@@ -26,7 +26,7 @@ const
   Bin_14 = 14;
   Bin_64 = 64;   //test
   Bin_65 = 65;
-  Bin_80 = 80;
+  Bin_80 = 80; //sample±ê¼Ç
   Bin_81 = 81;
   Bin_96 = 96;
   Bin_128 = 128;    //mark
