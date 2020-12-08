@@ -85,6 +85,10 @@ object Form6: TForm6
     object ts2: TTabSheet
       Caption = #27979#35797#25968#25454#35206#30422'tel'#27169#26495#25991#20214
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object lbl3: TLabel
         Left = 7
         Top = 8

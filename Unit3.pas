@@ -1,4 +1,4 @@
-unit Unit3;
+unit unit3;
 
 interface
 
@@ -338,12 +338,10 @@ end;
 
 procedure TForm3.FormCreate(Sender: TObject);
 begin
-
   lv1.ViewStyle := vsReport;
   lv1.GridLines := True;         {╥гд╛хо}
   lv1.ShowColumnHeaders := True; {д╛хо}
   Log.Lines.Clear;
-
 end;
 
 procedure TForm3.lv1Click(Sender: TObject);

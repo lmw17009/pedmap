@@ -86,7 +86,6 @@ object Form11: TForm11
       item
         Width = 200
       end>
-    ExplicitWidth = 784
   end
   object btnSearchSub: TButton
     Left = 297

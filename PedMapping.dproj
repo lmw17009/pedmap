@@ -143,6 +143,7 @@
             <Form>Form11</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="..\..\CoreFunction\JsonAdjust.pas"/>
         <DCCReference Include="WatLimit.pas">
             <Form>WatLimitMain</Form>
             <FormType>dfm</FormType>
@@ -151,17 +152,32 @@
             <Form>WatEdit</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="XlsReName.pas">
-            <Form>Form12</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <DCCReference Include="XlsSetup.pas">
             <Form>Form13</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="JsonAdjust.pas"/>
         <DCCReference Include="Help.pas">
             <Form>Form14</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Thanks.pas">
+            <Form>Form16</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="XlsFileAdjust.pas">
+            <Form>XlsFileRename</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="CardSizeShow.pas">
+            <Form>Form12</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="MapCreate.pas">
+            <Form>Form15</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="CardNeedlePos.pas">
+            <Form>Form17</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

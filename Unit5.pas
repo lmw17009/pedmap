@@ -311,7 +311,7 @@ var
   dlg: TOpenDialog;
   Path, Str: string;
 begin
-  if MessageDlg('请确保文件未被打开占用..', TMsgDlgType.mtWarning, [mbYes, mbNo], 0) = mrYes then
+  if MessageDlg('请确保文件未被打开占用！如遇到文件无法加载，请把文件从文件夹内拷贝到根目录或者桌面，因系统权限问题，某些文件夹没有权限进行编辑。', TMsgDlgType.mtWarning, [mbYes, mbNo], 0) = mrYes then
   begin
     dlg := TOpenDialog.Create(Self);
     mmo3.Lines.Clear;
@@ -475,6 +475,7 @@ procedure TForm5.FormCreate(Sender: TObject);
 begin
   mmo3.Lines.Clear;
   Scale := trckbr1.Position;
+  self.Caption:=self.Caption+SubVer_PosCheck;
 end;
 
 function TForm5.GetMaxInArray(A: array of Integer): Integer;

@@ -53,13 +53,8 @@ type
     WAT1: TMenuItem;
     FTP1: TMenuItem;
     WatLimit1: TMenuItem;
-    N6: TMenuItem;
-    mniTSKSample: TMenuItem;
-    mniN7: TMenuItem;
-    btn1: TButton;
-    CardSizeShow1: TMenuItem;
-    Card1: TMenuItem;
-    NeedlePos1: TMenuItem;
+    XLS1: TMenuItem;
+    H1: TMenuItem;
     procedure E1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure NBBtnClick(Sender: TObject);
@@ -98,9 +93,8 @@ type
     procedure WatLimit1Click(Sender: TObject);
     procedure mniTSKSampleClick(Sender: TObject);
     procedure mniN7Click(Sender: TObject);
+    procedure XLS1Click(Sender: TObject);
     procedure btn1Click(Sender: TObject);
-    procedure CardSizeShow1Click(Sender: TObject);
-    procedure NeedlePos1Click(Sender: TObject);
   private
     procedure SaveTSKMapFile;
 
@@ -142,8 +136,7 @@ implementation
 
 uses
   Global, Unit2, Unit3, Unit5, Unit6, Unit7, Unit8, WAT, FTP, WatLimit, Help,
-  Update, XlsFileAdjust, { ExcelAdjust,} MapCreate, Thanks, CardSizeShow,
-  CardNeedlePos;
+  Update, XlsFileAdjust, ExcelAdjust, MapCreate, Thanks;
 
 procedure TForm1.A1Click(Sender: TObject);
 begin
@@ -620,7 +613,7 @@ end;
 
 procedure TForm1.H1Click(Sender: TObject);
 begin
-//
+  form14.show;
 
 end;
 
@@ -1540,12 +1533,6 @@ begin
   DrawMap;
 end;
 
-procedure TForm1.NeedlePos1Click(Sender: TObject);
-begin
-  showmessage('各个尺寸请以"."符号进行间隔');
-  Form17.show;
-end;
-
 procedure TForm1.SaveBtnClick(Sender: TObject);
 //var
 //  MyStream: TFileStream;
@@ -1682,6 +1669,11 @@ begin
   end;
 end;
 
+procedure TForm1.XLS1Click(Sender: TObject);
+begin
+  ExcelAdj.show;
+end;
+
 procedure TForm1.XXLBtnClick(Sender: TObject);
 begin
   try
@@ -1710,12 +1702,6 @@ end;
 procedure TForm1.ButtonGroup1Items2Click(Sender: TObject);
 begin
   Edit3.Text := Trim(ButtonGroup1.Items[2].Caption);
-end;
-
-procedure TForm1.CardSizeShow1Click(Sender: TObject);
-begin
-  showmessage('各个尺寸请以"."符号进行间隔');
-  Form12.show;
 end;
 
 procedure TForm1.ConfigIni;
@@ -1778,7 +1764,6 @@ begin
   ShowMessage(S1 + #13 + S2 + #13 + S3 + #13 + S4);
   //Form10.Show;
   XlsFileRename.Show;
-
 end;
 
 procedure TForm1.Dat1Click(Sender: TObject);

@@ -6,7 +6,7 @@ object Form1: TForm1
   Caption = 'PED TSK&TEL Map Edit'
   ClientHeight = 645
   ClientWidth = 900
-  Color = clWindow
+  Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -244,15 +244,6 @@ object Form1: TForm1
     Caption = #38145#23450'Mark'
     TabOrder = 19
   end
-  object btn1: TButton
-    Left = 736
-    Top = 560
-    Width = 75
-    Height = 25
-    Caption = 'btn1'
-    TabOrder = 20
-    OnClick = btn1Click
-  end
   object dlgOpen1: TOpenDialog
     Left = 80
     Top = 40
@@ -277,7 +268,7 @@ object Form1: TForm1
       end
     end
     object N2: TMenuItem
-      Caption = 'CP(&C)'
+      Caption = #25805#20316
       object N4: TMenuItem
         Caption = #22352#26631#26816#27979
         OnClick = N4Click
@@ -294,21 +285,28 @@ object Form1: TForm1
       end
       object Focus2Accodata1: TMenuItem
         Caption = 'Focus2Acco-data'
-        Enabled = False
         OnClick = Focus2Accodata1Click
       end
       object Dat1: TMenuItem
         Caption = 'Dat'#25991#20214#32534#36753
-        Enabled = False
         OnClick = Dat1Click
       end
+      object WATWafer1: TMenuItem
+        Caption = 'WATWafer'#25991#20214#29983#25104
+        OnClick = WATWafer1Click
+      end
       object CPSPEC1: TMenuItem
-        Caption = 'CP-Xls'#25991#20214#25209#37327#20462#25913'[PPID/LotID]'
+        Caption = 'CP-SPEC'#25209#37327#25991#20214#26356#25913
         OnClick = CPSPEC1Click
+      end
+      object XLS1: TMenuItem
+        Caption = 'XLS'#25991#20214#25913#21517
+        Enabled = False
+        OnClick = XLS1Click
       end
     end
     object WAT1: TMenuItem
-      Caption = 'WAT(&W)'
+      Caption = 'WAT'
       object FTP1: TMenuItem
         Caption = 'FTP'#21151#33021
         OnClick = FTP1Click
@@ -317,38 +315,16 @@ object Form1: TForm1
         Caption = 'WatLimit'#21019#24314
         OnClick = WatLimit1Click
       end
-      object WATWafer1: TMenuItem
-        Caption = 'WATWafer'#25991#20214#29983#25104
-        OnClick = WATWafer1Click
-      end
-    end
-    object N6: TMenuItem
-      Caption = #21246#36873#21442#25968
-      object mniTSKSample: TMenuItem
-        Caption = 'TSKSimple'
-        OnClick = mniTSKSampleClick
-      end
-    end
-    object Card1: TMenuItem
-      Caption = #38024#21345
-      object NeedlePos1: TMenuItem
-        Caption = 'NeedlePos'
-        OnClick = NeedlePos1Click
-      end
-      object CardSizeShow1: TMenuItem
-        Caption = 'CardSizeShow'
-        OnClick = CardSizeShow1Click
-      end
     end
     object N3: TMenuItem
       Caption = #35828#26126'(&D)'
       object A1: TMenuItem
-        Caption = #36129#29486#35828#26126'(&T)'
+        Caption = #36129#29486'(&C)'
         OnClick = A1Click
       end
-      object mniN7: TMenuItem
-        Caption = #24110#21161#35828#26126'(&H)'
-        OnClick = mniN7Click
+      object H1: TMenuItem
+        Caption = #24110#21161'(&H)'
+        OnClick = H1Click
       end
     end
   end

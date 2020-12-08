@@ -66,6 +66,7 @@ var
   Arr: TArray<string>;
   ProdLimitBool, ProdTstBool, ProdWafBool, ProdDieBool: Boolean;
   EngLimitBool, EngTstBool, EngWafBool, EngDieBool: Boolean;
+  PFindBool, EFindBool: Boolean;
 begin
   MmAdd('*******开始检测*******');
   if WatTestPlanProd <> nil then
@@ -80,7 +81,8 @@ begin
         //Mmadd('开始对比testplan....');
         if edtPPID.Text = WatTestPlanProd[I] then
         begin
-          MmAdd(IntToStr(I + 4) + '=>' + WatTestPlanProd[I]);
+          PFindBool := True;
+          MmAdd(IntToStr(I + 4) + '行发现=>' + WatTestPlanProd[I]);
           MmAdd('发现相同testplan,开始查询....');
           AssignFile(Txt, WatFilePath + PilProdFileName);
           Reset(Txt);
@@ -175,6 +177,11 @@ begin
 
           Break;
         end;
+
+      end;
+      if not PFindBool then
+      begin
+        MmAdd('Prod未发现testplan！！');
       end;
     end;
     MmAdd('PROD查询完毕....');
@@ -190,7 +197,7 @@ begin
         //Mmadd('开始对比testplan....');
         if edtPPID.Text = WatTestPlanEng[I] then
         begin
-          MmAdd(IntToStr(I + 4) + '=>' + WatTestPlanEng[I]);
+          MmAdd(IntToStr(I + 4) + '行发现=>' + WatTestPlanEng[I]);
           MmAdd('发现相同testplan,开始查询....');
           AssignFile(Txt, WatFilePath + PilEngFileName);
           Reset(Txt);
@@ -284,6 +291,10 @@ begin
           Break;
         end;
 
+      end;
+      if not EFindBool then
+      begin
+        MmAdd('Eng未发现testplan！！');
       end;
     end;
     MmAdd('ENG查询完毕....');
@@ -728,7 +739,7 @@ begin
     for i := 0 to FtpFileList.Count - 1 do
     begin
       Arr := FtpFileList[i].Split([' ']);
-      Self.Caption := 'WATFTP ' + IntToStr(i + 1) + '/' + IntToStr(FtpFileList.Count);
+      //Self.Caption := 'WATFTP ' + IntToStr(i + 1) + '/' + IntToStr(FtpFileList.Count);
       //stat1.Panels[1].Text := IntToStr(i) + '/' + IntToStr(FtpFileList.Count);
       List.Add(Arr[High(Arr)]);
     end;

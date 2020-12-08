@@ -39,6 +39,7 @@ type
     { Public declarations }
     procedure RefreshListView;
   end;
+
 var
   WatLimitMain: TWatLimitMain;
   PosX, PosY: Integer;
@@ -49,7 +50,7 @@ implementation
 
 {$R *.dfm}
 uses
-  WatLimitEdit;
+  WatLimitEdit, Global;
 
 procedure TWatLimitMain.btn1Click(Sender: TObject);
 var
@@ -130,6 +131,7 @@ var
   i, j, k: Integer;
   Count: Integer;
   TempBlankStr, TempBlankStr1, TestTitleStr: string;
+  Temp:Integer;
 begin
   //此处为判断标题是否为空
   Count := mmo1.Lines.Count;
@@ -167,13 +169,14 @@ begin
       end;
       if Length(mmo1.Lines[i]) < 25 then
       begin
-        for k := 0 to 24 - Length(mmo1.Lines[i]) do
+        for k := 0 to 25 - Length(mmo1.Lines[i]) do
         begin
           TempBlankStr1 := TempBlankStr1 + ' ';
         end;
       end;
 
       TestTitleStr := TempBlankStr + IntToStr(i + 1) + '  ' + mmo1.Lines[i] + TempBlankStr1;
+
       Caption := TestTitleStr;
       //填入unit unknow
       SubItems.Add('unknow      ');
@@ -203,7 +206,7 @@ procedure TWatLimitMain.FormCreate(Sender: TObject);
 begin
   Self.Position := poDesktopCenter;
   mmo1.Lines.Clear;
-  Self.Caption := Self.Caption + Version;
+  Self.Caption := Self.Caption + SubVer_Limit;
 end;
 
 procedure TWatLimitMain.lv1ColumnRightClick(Sender: TObject; Column: TListColumn; Point: TPoint);

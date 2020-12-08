@@ -44,7 +44,7 @@ object WatLimitMain: TWatLimitMain
   end
   object btn1: TButton
     Left = 752
-    Top = 1
+    Top = 0
     Width = 113
     Height = 106
     Caption = #21019#24314'LIM'

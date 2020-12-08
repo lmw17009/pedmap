@@ -25,7 +25,7 @@ var
 implementation
 
 uses
-  Update;
+  Update, WatLimit;
 {$R *.dfm}
 
 procedure TForm14.FormCreate(Sender: TObject);
@@ -64,7 +64,7 @@ begin
     if lst1.Selected[4] then
   begin
     mmo1.Lines.Clear;
-    mmo1.Lines.Add(WatLimit);
+    mmo1.Lines.Add(WatLimitFun);
   end;
 
 end;

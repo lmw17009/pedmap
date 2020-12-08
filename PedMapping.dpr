@@ -14,12 +14,16 @@ uses
   WAT in 'WAT.pas' {Form9},
   Limit in 'Limit.pas' {Form10},
   FTP in 'FTP.pas' {Form11},
+  JsonAdjust in '..\..\CoreFunction\JsonAdjust.pas',
   WatLimit in 'WatLimit.pas' {WatLimitMain},
   WatLimitEdit in 'WatLimitEdit.pas' {WatEdit},
-  XlsReName in 'XlsReName.pas' {Form12},
   XlsSetup in 'XlsSetup.pas' {Form13},
-  JsonAdjust in 'JsonAdjust.pas',
-  Help in 'Help.pas' {Form14};
+  Help in 'Help.pas' {Form14},
+  Thanks in 'Thanks.pas' {Form16},
+  XlsFileAdjust in 'XlsFileAdjust.pas' {XlsFileRename},
+  CardSizeShow in 'CardSizeShow.pas' {Form12},
+  MapCreate in 'MapCreate.pas' {Form15},
+  CardNeedlePos in 'CardNeedlePos.pas' {Form17};
 
 {$R *.res}
 
@@ -38,9 +42,12 @@ begin
   Application.CreateForm(TForm11, Form11);
   Application.CreateForm(TWatLimitMain, WatLimitMain);
   Application.CreateForm(TWatEdit, WatEdit);
-  Application.CreateForm(TForm12, Form12);
   Application.CreateForm(TForm13, Form13);
   Application.CreateForm(TForm14, Form14);
+  Application.CreateForm(TForm16, Form16);
+  Application.CreateForm(TXlsFileRename, XlsFileRename);
+  Application.CreateForm(TForm12, Form12);
+  Application.CreateForm(TForm15, Form15);
+  Application.CreateForm(TForm17, Form17);
   Application.Run;
 end.
-

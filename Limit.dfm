@@ -51,15 +51,6 @@ object Form10: TForm10
     Height = 21
     TabOrder = 3
   end
-  object mmo3: TMemo
-    Left = 8
-    Top = 240
-    Width = 89
-    Height = 81
-    Lines.Strings = (
-      'mmo3')
-    TabOrder = 4
-  end
   object dlgOpen1: TOpenDialog
     Left = 152
     Top = 40
@@ -82,11 +73,10 @@ object Form10: TForm10
     Top = 136
   end
   object mm1: TMainMenu
-    Left = 296
-    Top = 224
+    Left = 352
+    Top = 272
     object N1: TMenuItem
       Caption = #35774#32622
-      OnClick = N1Click
     end
   end
 end
